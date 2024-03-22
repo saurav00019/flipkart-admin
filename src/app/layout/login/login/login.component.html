@@ -1,0 +1,34 @@
+<section class="loginPage">
+<div class="row">
+    <div class="col-md-4 offset-md-4 col-sm-6 offset-sm-3" style="padding-top: 100px;">
+      <div class="card auth">
+        <div class="card-body auth-card" >
+          <div class="auth-avatar">
+            <img src="https://pluspng.com/img-png/user-png-icon-account-avatar-human-male-man-men-people-person-download-svg-download-png-edit-icon-512.png" alt="user" class="user-image">
+          </div>
+          <form [formGroup]="loginForm">
+            <div class="form-group">
+              <label for="email">Email : </label>
+              <input type="text" name="email" class="form-control" formControlName="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="password">Password : </label>
+              <input type="password" name="password" class="form-control" formControlName="password" placeholder="********">
+              <div class="text-right forget-pass">
+                <a routerLink="/forget-password">Forget Password ?</a>
+              </div>
+            </div>
+            <div class="text-center">
+              <input type="submit" class="btn btn-my" value="Login" (click)="login()">
+            </div>
+          </form>
+          <div class="text-center sign-up">
+            Don`t have an account ? <a routerLink="/sign-up">Sign Up</a> hera.
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

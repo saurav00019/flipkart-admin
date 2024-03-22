@@ -1,0 +1,92 @@
+<section class="category" style="padding-top: 112px;">
+    <div class="container mt-3" style="background-color: #d9c3c3;">
+        <h1 class="name">Category Table</h1>   
+        <button class="btn btn-lg btn-outline-primary btn-catg" (click)="openSm(content)">Add Category</button>
+        <table class="table" style="height: 220px;">
+            <!-- <div class="heading"> -->
+          <thead>
+            <tr>
+              <th style="font-size: 20px;">category</th>
+              <th>name</th>
+              <th>type</th>
+              <th>Action</th>
+              <th>image</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+        <!-- </div> -->
+          <tbody >
+            <tr *ngFor="let category of categoryList">
+              <td>{{category.category}}</td>
+              <td>{{category.name}}</td>
+              <td>{{category.type}}</td>
+              <td>
+                <button style="background-color: #e3a5a5;" (click)="delteCategory(category._id)"><i class="fa-regular fa-trash-can"></i></button>
+              </td>
+              <td>
+                <img height="65px" style="object-fit:contain;"
+                [src]='category.image'
+                alt="img">
+              </td>
+              <div class="form-check form-switch" style="background-color: #c77f7f;">
+                <div >
+                <input (change)="getId(category._id, $event)" [checked]="category.is_blocked == 1" class="form-check-input" style="left: 70px;" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+              </div>
+              
+              </div>
+            </tr>
+         
+          </tbody>
+        </table>
+      </div>
+</section>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <div class="container">
+      <form [formGroup]="addCategoryForm">
+      <div class="row">
+        <div class="col-md-4">
+          <label for="email">Category</label>
+          <input class="form-control" type="text" id="email" formControlName="category">
+        </div>
+        <div class="col-md-4">
+          <label for="email">Category name</label>
+          <input class="form-control" type="text" id="email" formControlName="name">
+        </div>
+        <div class="col-md-4">
+          <label for="email">Category type</label>
+          <input class="form-control" type="text" id="email" formControlName="type">
+        </div>
+        <div class="col-md-4">
+          <label for="email">category Image</label>
+          <div class="form-group ">
+            <input type="file" style="width: 250px;" class="form-control mc-upload" id="Sell-Fee" accept=" .jpg, .jpeg, .png, .gif,image/*" (change)="onFileSelected($event)" formControlName="image"
+           aria-describedby="Sell-Fee">
+        </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="addCategoty()">Save</button>
+  </div>
+</ng-template>
+
+
+
+
+
+<!-- <div class="modal" tabindex="-1" role="dialog" [class.show]="modalOpen">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+     
+      <h4>Category is here</h4>
+    </div>
+  </div>
+</div> -->

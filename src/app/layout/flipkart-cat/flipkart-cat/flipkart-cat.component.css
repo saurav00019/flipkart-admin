@@ -1,0 +1,35 @@
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: gray;
+  }
+  .category{
+    background: #6a4d4d;
+    padding-top: 112px;
+    height: 100vh
+  }
+  .name{
+    padding-bottom: 20px
+  }
+  th{
+    font-size: 20px;
+    background-color: #a53f3f
+  }
+  td{
+    font-size: 20px;
+    background-color: #c77f7f
+  }
+  /* .toggle{
+    left: 70px;
+  } */
+  label{
+    color: black;
+  }
+  .btn-catg{
+    background-color: 08d2e7;
+  }
+  tr{
+    background-color: #c77f7f
+  }
+  
